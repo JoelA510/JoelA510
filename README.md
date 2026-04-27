@@ -1,16 +1,16 @@
-## Hi there 👋
+# Joel Abraham
 
-<!--
-**JoelA510/JoelA510** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Operations & Compliance Specialist focused on ERP/WMS data integrity, logistics workflows, SQL reporting, Python automation, and governance-minded software.
 
-Here are some ideas to get you started:
+I build tools that connect physical operations to systems of record: shipment documentation, scheduling, defect tracking, compliance workflows, and audit-ready reporting.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Featured Projects
+
+- SquadLogic - Youth sports operations platform for roster generation, scheduling, facility management, RBAC, and multi-tenant Supabase workflows.
+- FormWaypoint - Logistics-document automation and shipment search platform for Commercial Invoice / SLI-style workflows.
+- AIAdvocate - Privacy-first Expo/Supabase app for survivor-focused legislation, bilingual AI summaries, vote history, and representative lookup.
+- PlanterPlan - Supabase-backed workflow platform with RBAC, safe migration protocol, architecture docs, and testing strategy.
+
+## Core stack
+
+SQL/PostgreSQL, Supabase, Python, TypeScript, React, Vite, Playwright, Vitest, JD Edwards, AS/400, ERP/WMS workflows.
