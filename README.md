@@ -4,7 +4,7 @@ Operations, logistics, compliance, and systems automation.
 
 I build practical software for workflows where physical operations, systems of record, and compliance requirements have to stay aligned: shipping documentation, scheduling, inventory data, defect tracking, audit evidence, and secure multi-tenant applications.
 
-Current positioning: Operations & Compliance Specialist with 7+ years in logistics environments, supported by 14+ years of broader hands-on operations, systems, and process improvement experience.
+Current positioning: Operations & Compliance Specialist — 15+ years of continuous hands-on operations across warehouse/freight logistics, global shipping compliance, and multi-campus facilities, now security-certified (Security+ · A+ · AWS CCP · ISC2 CC).
 
 - LinkedIn: https://linkedin.com/in/joel-abraham-cv
 - Portfolio: https://secureyour.tech
@@ -38,18 +38,6 @@ Built to convert registration data into balanced rosters, practice schedules, ga
 - Operational value: replaces spreadsheet-heavy scheduling workflows with structured import, generation, review, and reporting flows
 - Engineering value: CI gates, bundle checks, advisor linting, security documentation, and test coverage around high-risk workflows
 
-### FormWaypoint - logistics document automation
-
-Shipping-document workflow platform for logistics records, document conversion, and shipment search.
-
-Designed around real logistics pain points: repeated document preparation, Commercial Invoice / Shipper's Letter of Instruction style data, classification data, and fast retrieval across shipment records.
-
-- Repo: https://github.com/JoelA510/FormWaypoint
-- Status: active rewrite / WIP
-- Stack: Turborepo, pnpm, Hono, React, TanStack Router, PostgreSQL/Neon, ParadeDB, Prisma, Zod, Python FastAPI
-- Operational value: targets shipment-document conversion, OCR/prediction workflows, and searchable logistics records
-- Engineering value: monorepo architecture, shared schema package, typed API/client boundary, vertical-slice backend organization
-
 ### AIAdvocate - privacy-first legislative tracking app
 
 Production Expo/Supabase application for survivor-focused California legislation.
@@ -71,13 +59,23 @@ Supabase-backed workflow platform for multi-phase planning, task management, rol
 - Operational value: converts a complex multi-phase process into structured projects, phases, tasks, teams, dates, and reporting
 - Engineering value: single-source-of-truth architecture docs, safe migration protocol, ADRs, testing strategy, and machine-readable agent context
 
+### Helmets Clash - browser strategy game prototype
+
+Turn-based fantasy hex-strategy game that runs entirely in the browser: 2-4 seats (human or AI), four asymmetric factions, procedural maps with deterministic seeds, autosave, and replay support.
+
+- Repo: https://github.com/JoelA510/helmets-clash-web
+- Status: active prototype
+- Stack: React, TypeScript, Vite, Tailwind CSS, Vitest, Playwright, axe-core
+- Engineering value: typed game core decoupled from the view layer; agents work from task packets against a living spec, ADRs, and a development log
+
 ---
 
 ## Technical toolkit
 
 | Category | Tools and practices |
 |---|---|
-| Languages | Python, SQL, TypeScript, JavaScript, Bash, IBM AS/400 Control Language |
+| Working languages | SQL, IBM AS/400 Control Language |
+| AI-augmented development | TypeScript, JavaScript, and C# — shipped via agent-directed workflows (AI Advocate, SquadLogic, Helmets Clash) |
 | Frontend | React, React Native, Expo, Vite, TanStack Router/Query, Tailwind CSS |
 | Backend | Supabase, PostgreSQL, Edge Functions, Hono, FastAPI, Prisma |
 | Data | SQL reporting, CSV/JSON processing, ETL-style scripts, dashboards, reconciliation workflows |
