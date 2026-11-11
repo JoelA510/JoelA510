@@ -47,8 +47,8 @@ Production Expo/Supabase application for survivor-focused California legislation
 - Repo: https://github.com/JoelA510/AIAdvocate
 - Stack: Expo Router, React Native, Supabase, PostgreSQL, Edge Functions, pg_cron, pgvector, i18next, OpenAI summaries and embeddings
 - Data sources: as of November 2026, bill text, status, and history come from the California Legislature's public data archive, read by ranged requests into a 1+ GB zip from inside Edge Function limits. LegiScan is the fallback and OpenStates supplies legislators and votes.
-- Security/governance value: the public app uses anonymous sessions instead of accounts, and admin screens are web-only, a split CI enforces. Postgres RLS with locked-down RPCs, a shared rate gate on every external API call (also CI-enforced), and a risk register tying each identified risk to a control and a monitoring signal.
-- Privacy: no names, emails, or addresses are collected. The only per-device data is a push-notification token, kept only for users who allow notifications and tied to an anonymous session.
+- Security/governance value: the public app uses anonymous sessions instead of accounts, and admin screens are web-only, a split CI enforces. Postgres RLS with locked-down RPCs, a shared rate gate on every external API call (also CI-enforced), and a [risk register](https://github.com/JoelA510/AIAdvocate/blob/main/docs/risk-register.md) tying each identified risk to a control and a monitoring signal.
+- Privacy: no names, emails, or addresses are collected. What is stored (saved bills, reactions, vote-alert subscriptions, and a push-notification token for users who allow notifications) is tied to an anonymous session.
 - Engineering value: scheduled ingestion with daily health alerting, vote syncing, bilingual summarization that source refreshes cannot overwrite, semantic search, verification SQL, and a documented release process
 - Scale and scope, stated plainly: roughly 30 accounts at last count, on free-tier infrastructure. No external security review has been conducted.
 
