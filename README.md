@@ -75,15 +75,6 @@ A project template for AI-driven development: agents write most of the code, and
 - Verification: 1,264 tests pass in a clean checkout (November 2026)
 - Status: v1.0.0 (October 2026). FormWaypoint and SquadLogic take their workflow skills from it. Its trial runs, including the ones where its own scorecard was wrong, are logged in the repository.
 
-### Phased Launch Planner — structured multi-phase workflow tool
-
-Supabase-backed workflow platform for multi-phase planning, task management, role-based access, and safe schema evolution.
-
-- Private project: source and deployment are not public
-- Stack: React, TypeScript, Supabase, PostgreSQL, RLS, TanStack Query, Zod, Playwright
-- Architecture: projects modeled as root-level tasks in a recursive tree, deep-cloning of entire template task trees into active instances, and denormalized `root_id` indexing to avoid expensive recursive queries
-- Engineering value: single-source-of-truth architecture docs, safe migration protocol, ADRs, testing strategy, and machine-readable agent context
-
 ### Helmets Clash — browser strategy game prototype
 
 Turn-based fantasy hex-strategy game that runs entirely in the browser: 2-4 seats (human or AI), four asymmetric factions, procedural maps with deterministic seeds, autosave, and replay support.
