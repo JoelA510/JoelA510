@@ -1,6 +1,7 @@
-# Joel Abraham
-
-Operations, logistics, compliance, and systems automation.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img src="assets/banner-light.svg" alt="Joel Abraham. Operations, logistics, compliance, and systems automation." width="840">
+</picture>
 
 I build practical software for workflows where physical operations, systems of record, and compliance requirements have to stay aligned: export documentation, shipping data, scheduling, inventory integrity, defect tracking, audit evidence, and secure multi-tenant applications.
 
@@ -24,11 +25,54 @@ Current positioning: Operations & Compliance Specialist — 15+ years of continu
 
 ---
 
+## How I build: AI-led, and structured
+
+Agents write most of the code in these projects. My part is deciding what gets built, writing the rules it is built under, and refusing to trust a check until I have seen it fail. I am not claiming unaided coding. The claim is that the engineering is real: the plan, the constraints, the gates, and the review are mine to own.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/process-dark.svg">
+  <img src="assets/process-light.svg" alt="How a change ships, in six steps. One, define the workflow and how it fails. Two, agree a plan before a large change. Three, an agent writes the code under written rules. Four, automated gates: types, lint, tests, build. Five, an adversarial review separate from the author. Six, I approve the merge once every check is green. A failed gate or review sends the change back to the build step. Steps one, two and six are mine to decide." width="840">
+</picture>
+
+What separates this from prompting until something looks right:
+
+| Unstructured | What these repositories require | Where it is written |
+|---|---|---|
+| Prompt until it looks right | A written plan is agreed before a large change | [`prompts/plan-change.md`](https://github.com/JoelA510/agent-ready-template/blob/main/prompts/plan-change.md) |
+| "Tests pass" | A new check is shown failing on a planted defect before it is trusted | [`AGENTS.md`](https://github.com/JoelA510/agent-ready-template/blob/main/AGENTS.md) |
+| "It works" | Every claim is labeled statically reviewed, executed, or fully validated | [`AGENTS.md`](https://github.com/JoelA510/agent-ready-template/blob/main/AGENTS.md) |
+| The author reviews its own work | A separate adversarial review before merge | [`prompts/review.md`](https://github.com/JoelA510/agent-ready-template/blob/main/prompts/review.md) |
+| Rules live in a chat window | Rules live in the repository, one file read by every agent | [ADR 0007](https://github.com/JoelA510/agent-ready-template/blob/main/docs/adr/0007-agents-md-with-claude-import.md) |
+| Guess when unsure | A compliance value is never inferred, and a blank is never treated as zero | [FormWaypoint `AGENTS.md`](https://github.com/JoelA510/FormWaypoint/blob/main/AGENTS.md) |
+
+These rules are packaged in [agent-ready-template](https://github.com/JoelA510/agent-ready-template). FormWaypoint and SquadLogic take their workflow from it; AI Advocate and Helmets Clash predate it and carry their own written rules.
+
+Most of these projects sit on a boundary where a confident wrong answer is expensive: physical operations against systems of record, public clients against protected data, automation speed against auditability. The rule that falls out, and the one FormWaypoint is built around, is that a system handling regulated data should refuse to guess.
+
+The limits, stated plainly: no external security review has been conducted on any of these projects.
+
+---
+
 ## Featured projects
 
-### FormWaypoint — export documentation that never leaves the machine
+Select a header to open its repository.
+
+<a href="https://github.com/JoelA510/FormWaypoint">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/card-formwaypoint-dark.svg">
+  <img src="assets/card-formwaypoint-light.svg" alt="FormWaypoint: export documentation that never leaves the machine" width="840">
+</picture>
+</a>
 
 Converts a combined Commercial Invoice & Packing List (CIPL) into a completed carrier Shipper's Letter of Instruction (SLI). The document is parsed locally and the carrier's own blank PDF is filled locally: no backend, no account, and no network call carrying shipment data. It runs in the browser or as a Windows desktop app, whose only network call downloads the public Schedule B dataset from census.gov.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/formwaypoint-flow-dark.svg">
+  <img src="assets/formwaypoint-flow-light.svg" alt="FormWaypoint's flow, all on your machine: an invoice and packing list is read locally, checked against its printed totals, and used to fill the carrier's own blank form, producing a completed, unsigned form. If the figures do not sum back to the printed totals, no form is produced. No shipment data leaves the machine." width="840">
+</picture>
+
+<details>
+<summary>Details: stack, scope, and verification</summary>
 
 - Repo: https://github.com/JoelA510/FormWaypoint (MIT)
 - Stack: TypeScript, React, Vite, Tailwind, `pdfjs-dist` / `pdf-lib`, IndexedDB, Vitest, Tauri 2 desktop shell
@@ -39,9 +83,19 @@ Converts a combined Commercial Invoice & Packing List (CIPL) into a completed ca
 - Verification: 1,111 automated tests pass in a clean checkout (November 2026). A further 104 tests replay six real, manually processed shipments, with expected values taken from the SLIs actually filed; they run only where those documents are held locally and skip everywhere else.
 - Status: pre-release (0.1.0). The desktop installer is built in CI but not yet published as a release.
 
-### AI Advocate — privacy-first legislative tracking app
+</details>
+
+<a href="https://github.com/JoelA510/AIAdvocate">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/card-ai-advocate-dark.svg">
+  <img src="assets/card-ai-advocate-light.svg" alt="AI Advocate: privacy-first legislative tracking app" width="840">
+</picture>
+</a>
 
 Production Expo/Supabase application for survivor-focused California legislation, built for the nonprofit Love Never Fails. Plain-language bill summaries in English and Spanish, representative lookup, vote history, and outreach tooling.
+
+<details>
+<summary>Details: stack, scope, and verification</summary>
 
 - Live: https://www.ai-advocate.org/
 - Repo: https://github.com/JoelA510/AIAdvocate
@@ -52,9 +106,19 @@ Production Expo/Supabase application for survivor-focused California legislation
 - Engineering value: scheduled ingestion with daily health alerting, vote syncing, bilingual summarization, semantic search, verification SQL, and a documented release process
 - Scale and scope, stated plainly: roughly 30 accounts at last count, on free-tier infrastructure. No external security review has been conducted.
 
-### SquadLogic — youth sports scheduling platform
+</details>
+
+<a href="https://github.com/JoelA510/SquadLogic">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/card-squadlogic-dark.svg">
+  <img src="assets/card-squadlogic-light.svg" alt="SquadLogic: youth sports scheduling platform" width="840">
+</picture>
+</a>
 
 Turns a youth recreational league's registration export into balanced teams and conflict-aware practice and game schedules, with field management, scores and standings, and printable reports. It is an administrator's tool by design: coaches and families do not sign in, and it stores no birthdates or guardian contacts.
+
+<details>
+<summary>Details: stack, scope, and verification</summary>
 
 - Live: https://squadlogic.secureyour.tech/
 - Repo: https://github.com/JoelA510/SquadLogic
@@ -63,9 +127,19 @@ Turns a youth recreational league's registration export into balanced teams and 
 - Engineering value: every scheduling change is run against an anonymized full-season regression corpus (567 published games across 9 Saturdays, 132 teams). State changes go through audited RPCs, CI is the only writer of database migrations, and six required checks gate every merge.
 - Status: v1.2.0 (October 2026), with a schedule-expansion plan in progress. No external security review has been conducted.
 
-### agent-ready-template — the process the other projects are built under
+</details>
+
+<a href="https://github.com/JoelA510/agent-ready-template">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/card-agent-ready-template-dark.svg">
+  <img src="assets/card-agent-ready-template-light.svg" alt="agent-ready-template: the process the other projects are built under" width="840">
+</picture>
+</a>
 
 A project template for AI-driven development: agents write most of the code, and the template supplies the process, checks, and structure that keep that work honest. One half is process (prompts, workflow skills, ADRs, a definition of done, and a standards catalog that scores a repository), delivered into other repositories by a script that updates only the files the target has not edited. The other half is an interface starter: design tokens and accessible React primitives in one Storybook.
+
+<details>
+<summary>Details: stack, scope, and verification</summary>
 
 - Repo: https://github.com/JoelA510/agent-ready-template (MIT)
 - Storybook: https://joela510.github.io/agent-ready-template/
@@ -75,15 +149,27 @@ A project template for AI-driven development: agents write most of the code, and
 - Verification: 1,264 tests pass in a clean checkout (November 2026)
 - Status: v1.0.0 (October 2026). FormWaypoint and SquadLogic take their workflow skills from it. Its trial runs, including the ones where its own scorecard was wrong, are logged in the repository.
 
-### Helmets Clash — browser strategy game prototype
+</details>
+
+<a href="https://github.com/JoelA510/helmets-clash-web">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/card-helmets-clash-dark.svg">
+  <img src="assets/card-helmets-clash-light.svg" alt="Helmets Clash: browser strategy game prototype" width="840">
+</picture>
+</a>
 
 Turn-based fantasy hex-strategy game that runs entirely in the browser: 2-4 seats (human or AI), four asymmetric factions, procedural maps with deterministic seeds, autosave, and replay support.
+
+<details>
+<summary>Details: stack, scope, and verification</summary>
 
 - Live: https://helmets-clash.secureyour.tech/
 - Repo: https://github.com/JoelA510/helmets-clash-web
 - Status: prototype
 - Stack: React, TypeScript, Vite, Tailwind CSS, Vitest, Playwright, axe-core
 - Engineering value: typed game core decoupled from the view layer; agents work from task packets against a living spec, ADRs, and a development log
+
+</details>
 
 ---
 
@@ -118,25 +204,6 @@ The software above is downstream of the day job, not a substitute for it.
 
 ---
 
-## How I build
-
-I use AI-assisted development, but not as a substitute for architecture or review.
-
-My usual pattern:
-
-1. Define the operational workflow and its failure modes.
-2. Lock the schema, permissions, and data boundaries.
-3. Generate or refactor code against explicit constraints.
-4. Run type checks, tests, linting, and targeted verification scripts.
-5. Review the result for security, maintainability, and real workflow fit.
-6. Document the operational runbook and follow-up risks.
-
-That pattern is written down as prompts, skills, and scored standards in [agent-ready-template](https://github.com/JoelA510/agent-ready-template), so each project starts from the same rules instead of my memory of them.
-
-This matters because most of my projects sit near high-friction boundaries: physical operations vs. systems of record, public clients vs. protected data, automation speed vs. auditability, and AI-generated code vs. production reliability. The rule that falls out of that, and the one FormWaypoint is built around, is that a system handling regulated data should refuse to guess rather than produce a confident wrong answer.
-
----
-
 ## Current target roles
 
 I am most aligned with roles that combine operations knowledge, systems thinking, reporting, and automation:
@@ -162,18 +229,3 @@ I am most aligned with roles that combine operations knowledge, systems thinking
 - Dangerous Goods: Lithium Cells & Batteries (Labelmaster; DOT 49 CFR, IATA DGR, IMDG), August 2026
 - Cybersecurity Pre-Apprenticeship, ITBiz Tech Academy (Class Salutatorian)
 - Google AI Essentials
-
----
-
-## What this GitHub is meant to show
-
-This profile is not just a code sample archive.
-
-It is evidence of a working pattern:
-
-- understand the real operational workflow
-- model the data cleanly
-- automate the repetitive parts
-- protect sensitive boundaries
-- test what can fail
-- document how to operate and recover the system
