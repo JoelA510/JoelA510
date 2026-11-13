@@ -229,3 +229,11 @@ I am most aligned with roles that combine operations knowledge, systems thinking
 - Dangerous Goods: Lithium Cells & Batteries (Labelmaster; DOT 49 CFR, IATA DGR, IMDG), August 2026
 - Cybersecurity Pre-Apprenticeship, ITBiz Tech Academy (Class Salutatorian)
 - Google AI Essentials
+
+---
+
+## Security
+
+Report security or privacy concerns about this profile through its
+[security policy](https://github.com/JoelA510/JoelA510/blob/main/SECURITY.md).
+Featured applications have their own reporting policies in their repositories.
