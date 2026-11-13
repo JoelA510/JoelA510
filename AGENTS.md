@@ -10,15 +10,20 @@ It is not the source repository for the featured applications.
   deployment status, or verification results. Check the relevant project's current
   source before updating its technical claims; ask when a personal fact is missing.
 - Do not copy private career documents or unpublished writing into the profile.
-- Keep light and dark asset variants aligned when a change affects both. Preserve
-  useful image alt text and the existing links to source repositories.
+- The SVGs in `assets/` are generated: edit the text in `assets/build.py` and run
+  `python3 assets/build.py`, which rewrites every light and dark variant. Never edit an
+  SVG by hand. Counts that go stale (tests, versions) belong in README text, not a graphic.
+- Preserve useful image alt text and the existing links to source repositories.
+- The featured projects were built by directing AI agents under written rules; keep
+  that stated wherever a project is described.
 - Change the profile only; work on a linked application belongs in its own repo.
 
 ## Verification and reporting
 
-There is no package manager or application build in this repository. Check changed
-Markdown/HTML links, referenced asset paths, and image rendering. Describe those
-checks honestly rather than reporting application tests that were not run.
+There is no package manager or test suite. After a graphics change, run
+`python3 assets/build.py` and confirm `git status` shows only the SVGs you expected.
+Check changed links, referenced asset paths, and image rendering in both themes.
+Describe those checks honestly rather than reporting tests that do not exist.
 
 Read [SECURITY.md](SECURITY.md) before sharing a suspected vulnerability. Public
 issues, PRs (including drafts), logs, and artifacts are not private channels.
