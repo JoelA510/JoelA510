@@ -20,12 +20,12 @@ MONO = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
 THEMES = {
     "light": {
         "card": "#f6f8fa", "border": "#d0d7de", "text": "#1f2328", "muted": "#59636e",
-        "accent": "#0f766e", "accent_soft": "#ccfbf1", "agent": "#6639ba", "agent_soft": "#eee7fb",
+        "accent": "#2a6a6e", "accent_soft": "#e0f3f4", "agent": "#6639ba", "agent_soft": "#eee7fb",
         "auto": "#9a6700", "auto_soft": "#fff4d1", "line": "#afb8c1",
     },
     "dark": {
         "card": "#161b22", "border": "#30363d", "text": "#e6edf3", "muted": "#9198a1",
-        "accent": "#2dd4bf", "accent_soft": "#0f2f2c", "agent": "#b392f0", "agent_soft": "#241b3a",
+        "accent": "#7bc0c2", "accent_soft": "#113436", "agent": "#b392f0", "agent_soft": "#241b3a",
         "auto": "#e3b341", "auto_soft": "#33290d", "line": "#484f58",
     },
 }
