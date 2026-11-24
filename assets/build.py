@@ -139,7 +139,7 @@ def process(t):
 # text, so it stays readable on a phone and to a screen reader.
 
 PROJECTS = [
-    ("formwaypoint", "FormWaypoint", "Export documentation", ["No backend", "MIT", "Pre-release"]),
+    ("formwaypoint", "FormWaypoint", "Export documentation", ["No backend", "MIT", "Windows app"]),
     ("ai-advocate", "AI Advocate", "Civic tech", ["Live", "English + Spanish"]),
     ("squadlogic", "SquadLogic", "Scheduling", ["Live", "Admin-only"]),
     ("agent-ready-template", "agent-ready-template", "Process", ["MIT", "Storybook"]),

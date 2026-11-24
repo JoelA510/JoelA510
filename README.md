@@ -75,13 +75,14 @@ Converts a combined Commercial Invoice & Packing List (CIPL) into a completed ca
 <summary>Details: stack, scope, and verification</summary>
 
 - Repo: https://github.com/JoelA510/FormWaypoint (MIT)
+- Download (Windows): https://formwaypoint.secureyour.tech/
 - Stack: TypeScript, React, Vite, Tailwind, `pdfjs-dist` / `pdf-lib`, IndexedDB, Vitest, Tauri 2 desktop shell
 - Inputs and carriers: three CIPL formats in; Nippon Express USA and CEVA Logistics SLI forms out, with continuation sheets for long shipments. FedEx Ship Manager and UPS WorldShip are served by a generated keying sheet rather than an import file, because per-installation import maps fail silently or transpose values.
 - Validation: every Schedule B number is checked against the U.S. Census Bureau AES commodity concordance (9,746 codes in the committed dataset) for ten digits, active status, and required unit of quantity. Quantities, weights, and values must sum back to the totals printed on the source document before anything is generated.
 - Dangerous goods by air: classifies lithium batteries from the operator's own answers (nothing starts pre-answered) and prepares a Shipper's Declaration for a qualified person to check and sign. That output is marked unverified: its figures come from course materials rather than the licensed IATA DGR, it has not been used for a real consignment, and downloads stay disabled until the operator acknowledges this.
 - What it refuses to do is the design: it never assigns EAR99 because no ECCN appeared, never assigns NLR because EAR99 was chosen, never converts an HTSUS number into a Schedule B number, never adopts a classification from a historical filing, never infers country of origin or hazmat/routed-export status, never treats a blank as zero, and never applies a signature. An export declaration is signed under penalty; a form that looks complete and is wrong is the worst thing this tool could produce.
-- Verification: 1,111 automated tests pass in a clean checkout (November 2026). A further 104 tests replay six real, manually processed shipments, with expected values taken from the SLIs actually filed; they run only where those documents are held locally and skip everywhere else.
-- Status: pre-release (0.1.0). The desktop installer is built in CI but not yet published as a release.
+- Verification: 1,256 automated tests pass in a clean checkout (November 2026). A further 104 tests replay six real, manually processed shipments, with expected values taken from the SLIs actually filed; they run only where those documents are held locally and skip everywhere else.
+- Status: released (1.0.x, first published November 2026). Each successful main-branch desktop build publishes a portable Windows executable and a per-user installer to GitHub Releases.
 
 </details>
 
@@ -125,7 +126,7 @@ Turns a youth recreational league's registration export into balanced teams and 
 - Stack: React, Vite, Supabase, PostgreSQL, Edge Functions, RBAC, RLS, Vitest, Playwright-BDD, pgTAP
 - Operational value: replaces spreadsheet-heavy scheduling with structured import, generation, review, and publishing. A published game is pinned, so regenerating the schedule never moves it, and a game that cannot be placed is surfaced as time-TBD with a reason rather than dropped.
 - Engineering value: every scheduling change is run against an anonymized full-season regression corpus (567 published games across 9 Saturdays, 132 teams). State changes go through audited RPCs, CI is the only writer of database migrations, and six required checks gate every merge.
-- Status: v1.2.0 (October 2026), with a schedule-expansion plan in progress. No external security review has been conducted.
+- Status: v1.2.0 (October 2026) is the latest tagged release. Production deploys every merge, so the live site also runs the schedule-expansion work merged since (per-game publishing, games and practice schedule imports, paired practice days), which is not yet in a tagged release. No external security review has been conducted.
 
 </details>
 
@@ -144,10 +145,10 @@ A project template for AI-driven development: agents write most of the code, and
 - Repo: https://github.com/JoelA510/agent-ready-template (MIT)
 - Storybook: https://joela510.github.io/agent-ready-template/
 - Stack: TypeScript, React, Radix UI, Tailwind CSS, Style Dictionary, Storybook, Vitest, Playwright, axe-core
-- What is in it: 10 workflow skills (plan, root-cause, adversarial review, pre-PR, verify, and others), 58 standards across 10 stack packs, 20 ADRs, and 49 UI components
+- What is in it: 11 workflow skills (plan, root-cause, adversarial review, pre-PR, verify, and others), 58 standards across 10 stack packs, 25 ADRs, and 49 UI components
 - The rule that matters: a check is not trusted until it has been shown failing on a planted defect. Agents must also label every claim as statically reviewed, executed, or fully validated.
-- Verification: 1,264 tests pass in a clean checkout (November 2026)
-- Status: v1.0.0 (October 2026). FormWaypoint and SquadLogic take their workflow skills from it. Its trial runs, including the ones where its own scorecard was wrong, are logged in the repository.
+- Verification: 1,398 tests pass in a clean checkout (November 2026)
+- Status: v1.1.0 (November 2026), which added a decision ledger whose evidence is re-checked on pull requests. FormWaypoint and SquadLogic take their workflow skills from it. Its trial runs, including the ones where its own scorecard was wrong, are logged in the repository.
 
 </details>
 
